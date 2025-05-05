@@ -1,96 +1,125 @@
-# ⚡SynapseCode - AI Assisted Code Editor with Real-Time Collaboration
+⚡Code-Assist - AI-Assisted Code Editor with Real-Time Collaboration
+🎓 Final Year Project Overview
+Code-Assistt (previously called SynapseCode) is my final year B.Tech project, developed to address the growing needs of modern software development teams. It is an AI-assisted, real-time collaborative code editor that combines powerful coding features with intelligent automation. The project emphasizes teamwork, productivity, and intuitive design—perfect for remote collaboration, coding interviews, and team projects.
 
-## Overview
+📌 Problem Statement
+In today’s fast-paced development environment, teams often face challenges like:
 
-SynapseCode is a lightweight, AI-assisted code editor designed to empower developers with real-time multi-user collaboration and advanced AI-driven features. Built with a secure and intuitive workspace, SynapseCode not only supports live code editing and file management but also enhances productivity with AI-powered linting, auto-completion, documentation generation, and syntax correction.
+Limited real-time collaboration when editing code together.
 
-## Problem Statement
+Lack of intelligent code suggestions, leading to longer development cycles.
 
-Modern software development demands rapid collaboration and high-quality code. Developers need tools that:
-- **Seamlessly enable real-time editing:** Multiple users can work simultaneously without conflicts.
-- **Provide intelligent code suggestions and error corrections:** Minimize bugs and speed up coding.
-- **Ensure organized workspace management:** Support both private and public workspaces with clear file/folder hierarchies.
-- **Automatically synchronize code, files, and user interactions:** Eliminate manual saving and reduce merge conflicts.
+Disorganized file and workspace structures.
 
-SynapseCode meets these needs by integrating advanced AI capabilities with robust real-time collaboration, empowering teams to write, review, and maintain high-quality code efficiently.
+Frequent issues with synchronization and version conflicts.
 
-## Solution Architecture
+Code-Assistt solves these challenges by offering a smart, real-time collaborative platform, tailored especially for student teams and early-stage developers.
 
-### Core Infrastructure
+✅ Project Goals
+Enable multiple users to code together in real time.
 
-#### 1. Authentication & Database
-- **Firebase Authentication & Realtime Database:**  
-  - **Sign-Up/Login:** Users can register using Google or email with OTP verification.  
-  - **Password Management:** Secure options for password reset and change.  
-  - **Realtime Sync:** All code, files, and collaboration events are synchronized instantly using Firebase's Realtime Database and snapshot listeners. This ensures that every edit, file change, or chat message is reflected in real time across all user sessions. 🔄
+Offer AI-powered assistance such as code suggestions, linting, and documentation.
 
-#### 2. AI Integration
-- **Google Gemini API:**  
-  - **AI-Powered Suggestions:** Offers smart code completions and linting to assist with coding—without relying on context-aware processing. 🤖  
-  - **Auto-Documentation:** Automatically generates documentation comments for complex functions to improve code readability. 📚  
-  - **Code Correction:** Detects syntax errors on the fly and suggests automated fixes. 🛠️
-- **AI Chatbot:**  
-  - An integrated chatbot allows users to ask coding-related questions, receive help, and brainstorm ideas interactively. 💬
+Provide instant file syncing and autosaving to avoid data loss.
 
-#### 3. Code Editor & UI
-- **Monaco Editor:**  
-  - **Customization:** Supports multiple programming languages with customizable themes, adjustable font sizes, syntax highlighting, and collapsible code sections. 🎨  
-- **Collapsible Navigation Panel:**  
-  - **File Management:** Users can create, rename, delete, and drag-and-drop reorder files and folders in real-time.  
-  - **Recursive Implementation:** The navigation panel is built using a recursion technique that efficiently renders nested folder structures. This recursive approach makes it easy to display and manage complex, deeply nested file hierarchies. 🗂️
-- **Collaborative Features:**  
-  - **Live Cursor Tracking:** Displays each collaborator's cursor and avatar using Firebase realtime updates. 👥  
-  - **Chat Integration:** Provides an in-workspace chat feature where members can discuss code, share snippets, and receive messages in real time. 💬  
-  - **Workspace Invitations:** Users can invite others to join public workspaces; join/exit events and invitation responses are updated live. 🔔
+Maintain a clean and recursive file management system.
 
-## Tech Stack
+Integrate a chat system and live cursor tracking for smooth team communication.
 
-| Component              | Technology                                              |
-|------------------------|---------------------------------------------------------|
-| **Frontend**           | Next.js 15, Shadcn UI, Tailwind CSS                     |
-| **Code Editor**        | Monaco Editor                                           |
-| **Realtime Backend**   | Firebase Realtime Database & Firestore                  |
-| **AI Services**        | Google Gemini API                                       |
-| **Authentication**     | Firebase Authentication (Google & Email/OTP)            |
-| **Language**           | JavaScript                                              |
+🏗️ Solution Architecture
+1. 🔐 Authentication & Database
+Firebase Authentication
 
-## Implementation Details
+Users can register using Google Sign-In or Email with OTP verification.
 
-### 🔐 Authentication & User Management
-- **User Sign-Up/Login:**  
-  - **Google OAuth & Email/OTP:** Users have the flexibility to register using Google accounts or via email with OTP verification.  
-  - **Password Management:** Features include password resets and updates, ensuring secure access.
+Password recovery and management is handled securely.
 
-### 🚀 Real-Time Collaboration
-- **Live Synchronization:**  
-  - **Firebase Realtime Database:** Utilized for instant synchronization of code changes, file updates, and user presence (such as live cursor positions and chat messages).  
-  - **Snapshot Listeners:** Firebase snapshot listeners continuously monitor changes in the database, ensuring that every update (whether it’s a code edit, a file reordering, or a chat message) is immediately reflected across all connected clients. 🔄
-- **Collaborative Workspace:**  
-  - **Invitations & Notifications:** Workspace members can send invites, and new joiners are added in real time.  
-  - **Integrated Chat & Presence:** An in-built chat system allows team members to communicate instantly, while live cursor tracking displays the real-time location of each collaborator's cursor.  
-- **Autosave Feature:**  
-  - All code edits are automatically saved to the Firebase database, reducing the risk of data loss and ensuring seamless recovery of work.
+Realtime Database
 
-### 📝 Code Editor Features
-- **Monaco Editor Integration:**  
-  - **Multi-Language Support:** Enables syntax highlighting and code editing for multiple programming languages.  
-  - **Customizable UI:** Users can change themes, adjust font sizes, and collapse/expand code sections as needed.
-- **File Navigation Panel:**  
-  - **Recursive Rendering:** The file and folder navigation panel uses a recursive algorithm to display nested directories efficiently. This allows for dynamic creation, renaming, deletion, and reordering (via drag-and-drop) of files and folders, with every change synced in real time. 🗂️  
-  - **Real-Time Updates:** Changes to the file system are reflected immediately across all users in the workspace, ensuring consistent project structure.
+Firebase Realtime Database and Firestore are used to instantly sync all changes—code edits, chats, file updates, and user activities.
 
-### 🤖 AI-Driven Enhancements
-- **Code Suggestions & Linting:**  
-  - Integrated with the Google Gemini API, SynapseCode delivers smart code completions and real-time error detection along with recommended fixes.  
-- **Auto-Documentation & Code Correction:**  
-  - AI-generated documentation is available for complex functions, helping to maintain clear and well-documented code.  
-  - Real-time code correction detects syntax errors as you type, automatically suggesting fixes to streamline development.  
-- **AI Chatbot:**  
-  - An interactive AI chatbot is embedded within the editor, offering instant help, brainstorming ideas, and generating documentation on demand.
+2. 🤖 AI Integration (Google Gemini API)
+Smart Code Suggestions
 
-## Installation & Setup
+Gemini API is integrated to provide intelligent autocompletions and syntax fixes.
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/Abhi13-02/Haxplore.git
-   cd Haxplore
+Auto-Documentation
+
+Automatically generates comments for complex functions.
+
+Code Correction
+
+Identifies and fixes syntax errors in real time.
+
+AI Chatbot Assistant
+
+An integrated chatbot helps with doubts, coding guidance, and brainstorming.
+
+3. 🧠 Code Editor & UI
+Monaco Editor
+
+A powerful editor supporting multiple programming languages, themes, and collapsible code blocks.
+
+File Navigation Panel
+
+Built using recursion to handle nested folders and files.
+
+Supports dynamic actions like renaming, deletion, and drag-and-drop reordering.
+
+Real-Time Collaboration Tools
+
+Live Cursor Tracking: See where other users are editing in real time.
+
+In-Editor Chat: Team members can chat, discuss code, and share snippets instantly.
+
+Workspace Invites: Collaborators can be invited or removed in real time.
+
+🧰 Tech Stack Used
+Feature/Module	Technology Used
+Frontend Framework	Next.js 15
+Styling	Tailwind CSS, Shadcn UI
+Code Editor	Monaco Editor
+Backend & Database	Firebase Realtime Database + Firestore
+Authentication	Firebase Authentication (Google OAuth + Email/OTP)
+AI Integration	Google Gemini API
+Programming Language	JavaScript
+
+⚙️ Functional Details
+Authentication
+Supports secure login via Google or Email OTP.
+
+Includes password reset/update functionality.
+
+Real-Time Collaboration
+Firebase Realtime Database is used to sync all:
+
+Code edits
+
+File operations
+
+Cursor movements
+
+Chat messages
+
+Snapshot Listeners track real-time changes continuously.
+
+Editor Features
+Multi-language syntax highlighting.
+
+User-controlled themes and layout adjustments.
+
+Autosave: Every code change is saved automatically to prevent loss.
+
+File & Folder Management
+Recursively rendered file structure using tree data.
+
+Real-time actions like renaming, creation, deletion, and reordering.
+
+AI Features
+Real-time code linting and suggestions via Gemini API.
+
+Instant documentation for functions and classes.
+
+Syntax correction and refactoring help.
+
+Integrated chatbot for AI-driven support inside the workspace.
