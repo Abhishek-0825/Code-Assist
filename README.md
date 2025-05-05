@@ -1,125 +1,81 @@
-⚡Code-Assist - AI-Assisted Code Editor with Real-Time Collaboration
-🎓 Final Year Project Overview
-Code-Assistt (previously called SynapseCode) is my final year B.Tech project, developed to address the growing needs of modern software development teams. It is an AI-assisted, real-time collaborative code editor that combines powerful coding features with intelligent automation. The project emphasizes teamwork, productivity, and intuitive design—perfect for remote collaboration, coding interviews, and team projects.
+# ⚡ CodeAssist - AI-Assisted Code Editor with Real-Time Collaboration
 
-📌 Problem Statement
-In today’s fast-paced development environment, teams often face challenges like:
+> 🎓 Final Year B.Tech Project
 
-Limited real-time collaboration when editing code together.
+**CodeAssist** is a powerful, lightweight, AI-assisted code editor that allows developers to collaborate in real-time while benefiting from AI-driven coding features. Built using modern web technologies and integrated with Google’s Gemini API and Firebase, CodeAssist supports intelligent code suggestions, error detection, documentation generation, and seamless workspace management.
 
-Lack of intelligent code suggestions, leading to longer development cycles.
+---
 
-Disorganized file and workspace structures.
+## 🚀 Features
 
-Frequent issues with synchronization and version conflicts.
+- 🔄 **Real-Time Collaboration** – Code with multiple users simultaneously.
+- 🤖 **AI Assistance (Google Gemini API)** – Smart code completions, syntax linting, auto-documentation, and correction.
+- 💬 **Built-in Chat System** – Communicate with team members in the workspace.
+- 👥 **Live Cursor Tracking** – View real-time presence of collaborators.
+- 🗂️ **Recursive File Explorer** – Create, rename, delete, and organize files and folders with real-time syncing.
+- 🌐 **Cross-Device Syncing** – All edits and messages are instantly reflected across all devices.
+- 🔐 **Secure Authentication** – Google OAuth and Email/OTP based login system.
 
-Code-Assistt solves these challenges by offering a smart, real-time collaborative platform, tailored especially for student teams and early-stage developers.
+---
 
-✅ Project Goals
-Enable multiple users to code together in real time.
+## 🧠 Problem Statement
 
-Offer AI-powered assistance such as code suggestions, linting, and documentation.
+Developers often face the following challenges in collaborative environments:
 
-Provide instant file syncing and autosaving to avoid data loss.
+- No real-time code editing with live team presence.
+- Lack of intelligent coding assistance (e.g., linting, suggestions).
+- Disorganized workspaces with poor file management.
+- Manual saving and frequent merge conflicts.
 
-Maintain a clean and recursive file management system.
+**CodeAssist** solves these with a unified, smart, and collaborative development platform.
 
-Integrate a chat system and live cursor tracking for smooth team communication.
+---
 
-🏗️ Solution Architecture
-1. 🔐 Authentication & Database
-Firebase Authentication
+## 🧩 Tech Stack
 
-Users can register using Google Sign-In or Email with OTP verification.
+| Area                   | Technology Used                           |
+|------------------------|-------------------------------------------|
+| Frontend               | Next.js 15, Tailwind CSS, Shadcn UI       |
+| Editor                 | Monaco Editor                             |
+| Backend                | Firebase Realtime Database & Firestore    |
+| Authentication         | Firebase Authentication (Google & OTP)    |
+| AI Services            | Google Gemini API                         |
+| Programming Language   | JavaScript                                |
 
-Password recovery and management is handled securely.
+---
 
-Realtime Database
+## 🏗️ Architecture Overview
 
-Firebase Realtime Database and Firestore are used to instantly sync all changes—code edits, chats, file updates, and user activities.
+### 1. 🔐 Authentication & Database
+- Google OAuth and Email-based OTP login.
+- Password reset and update features.
+- Firebase Realtime Database syncs code, files, and user activity live.
 
-2. 🤖 AI Integration (Google Gemini API)
-Smart Code Suggestions
+### 2. 🤖 AI Integration
+- **Smart Suggestions & Linting** – Gemini API provides contextual auto-completion.
+- **Documentation Generator** – AI auto-generates helpful function documentation.
+- **Code Correction** – Detects and suggests syntax fixes instantly.
+- **AI Chatbot** – In-editor chatbot for real-time coding assistance.
 
-Gemini API is integrated to provide intelligent autocompletions and syntax fixes.
+### 3. 📝 Code Editor Features
+- Multi-language support, theming, and font customization.
+- Monaco Editor with collapsible sections and real-time auto-save.
 
-Auto-Documentation
+### 4. 🗂️ File Management System
+- Recursive file/folder hierarchy with drag-and-drop support.
+- Real-time file creation, deletion, and renaming.
 
-Automatically generates comments for complex functions.
+### 5. 👥 Collaboration Tools
+- Live cursor tracking for every user in a workspace.
+- In-app chat and real-time notifications on workspace changes.
+- Invite system to add collaborators dynamically.
 
-Code Correction
+---
 
-Identifies and fixes syntax errors in real time.
+## 🔧 Installation & Setup
 
-AI Chatbot Assistant
+### 1. Clone the Repository
 
-An integrated chatbot helps with doubts, coding guidance, and brainstorming.
-
-3. 🧠 Code Editor & UI
-Monaco Editor
-
-A powerful editor supporting multiple programming languages, themes, and collapsible code blocks.
-
-File Navigation Panel
-
-Built using recursion to handle nested folders and files.
-
-Supports dynamic actions like renaming, deletion, and drag-and-drop reordering.
-
-Real-Time Collaboration Tools
-
-Live Cursor Tracking: See where other users are editing in real time.
-
-In-Editor Chat: Team members can chat, discuss code, and share snippets instantly.
-
-Workspace Invites: Collaborators can be invited or removed in real time.
-
-🧰 Tech Stack Used
-Feature/Module	Technology Used
-Frontend Framework	Next.js 15
-Styling	Tailwind CSS, Shadcn UI
-Code Editor	Monaco Editor
-Backend & Database	Firebase Realtime Database + Firestore
-Authentication	Firebase Authentication (Google OAuth + Email/OTP)
-AI Integration	Google Gemini API
-Programming Language	JavaScript
-
-⚙️ Functional Details
-Authentication
-Supports secure login via Google or Email OTP.
-
-Includes password reset/update functionality.
-
-Real-Time Collaboration
-Firebase Realtime Database is used to sync all:
-
-Code edits
-
-File operations
-
-Cursor movements
-
-Chat messages
-
-Snapshot Listeners track real-time changes continuously.
-
-Editor Features
-Multi-language syntax highlighting.
-
-User-controlled themes and layout adjustments.
-
-Autosave: Every code change is saved automatically to prevent loss.
-
-File & Folder Management
-Recursively rendered file structure using tree data.
-
-Real-time actions like renaming, creation, deletion, and reordering.
-
-AI Features
-Real-time code linting and suggestions via Gemini API.
-
-Instant documentation for functions and classes.
-
-Syntax correction and refactoring help.
-
-Integrated chatbot for AI-driven support inside the workspace.
+```bash
+git clone https://github.com/Abhi13-02/Haxplore.git
+cd Haxplore
